@@ -1,38 +1,34 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADR IDE</title>
 
-<title>ADR IDE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="adr_matlab_cli_live/styles.css" />
-
-<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <link rel="stylesheet" href="adr_matlab_cli_live/styles.css" />
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
 </head>
-
 <body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
 
-<div class="bg-orb orb-1"></div>
-<div class="bg-orb orb-2"></div>
+  <header class="hero wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">MATLAB projekt</div>
+      <h1>ADR</h1>
 
-<header class="hero wrap">
-<div class="hero-copy">
-<div class="eyebrow">MATLAB projekt</div>
-<h1>ADR</h1>
-
-<div class="hero-actions">
-<button class="primary-btn" data-jump="ide">Editor</button>
-<button class="secondary-btn" data-jump="calc">Výpočty</button>
-<button class="secondary-btn" data-jump="env">Graf prostredia</button>
-<button class="secondary-btn" data-jump="obj">Graf objektu</button>
-<button class="secondary-btn" data-jump="interval">Vlastný interval</button>
-</div>
-</div>
+      <div class="hero-actions">
+        <button class="primary-btn" data-jump="ide" type="button">Editor</button>
+        <button class="secondary-btn" data-jump="calc" type="button">Výpočty</button>
+        <button class="secondary-btn" data-jump="env" type="button">Graf prostredia</button>
+        <button class="secondary-btn" data-jump="obj" type="button">Graf objektu</button>
+        <button class="secondary-btn" data-jump="interval" type="button">Vlastný interval</button>
+      </div>
+    </div>
 
     <div class="hero-card glass compact-stats">
       <div class="stat-box"><span>C</span><strong id="heroC">—</strong></div>
@@ -44,12 +40,12 @@
 
   <main class="layout wrap">
     <aside class="sidebar glass">
-      <button class="nav-btn active" data-panel="ide">Editor</button>
-      <button class="nav-btn" data-panel="calc">Výpočty</button>
-      <button class="nav-btn" data-panel="env">Graf prostredia</button>
-      <button class="nav-btn" data-panel="obj">Graf objektu</button>
-      <button class="nav-btn" data-panel="interval">Vlastný interval</button>
-      <button class="nav-btn" data-panel="files">MATLAB súbory</button>
+      <button class="nav-btn active" data-panel="ide" type="button">Editor</button>
+      <button class="nav-btn" data-panel="calc" type="button">Výpočty</button>
+      <button class="nav-btn" data-panel="env" type="button">Graf prostredia</button>
+      <button class="nav-btn" data-panel="obj" type="button">Graf objektu</button>
+      <button class="nav-btn" data-panel="interval" type="button">Vlastný interval</button>
+      <button class="nav-btn" data-panel="files" type="button">MATLAB súbory</button>
     </aside>
 
     <section class="content">
@@ -57,9 +53,9 @@
         <div class="section-head">
           <h2>Editor a spustenie</h2>
           <div class="run-buttons">
-            <button class="secondary-btn" id="btnResetCode">Obnoviť</button>
-            <button class="secondary-btn" id="btnDownloadCode">Stiahnuť .m</button>
-            <button class="primary-btn" id="btnRunEditor">Spustiť</button>
+            <button class="secondary-btn" id="btnResetCode" type="button">Obnoviť</button>
+            <button class="secondary-btn" id="btnDownloadCode" type="button">Stiahnuť .m</button>
+            <button class="primary-btn" id="btnRunEditor" type="button">Spustiť</button>
           </div>
         </div>
 
@@ -79,7 +75,9 @@
               </label>
             </div>
 
-            <div class="notice small-gap" id="editorNotice">Tu vieš kód meniť. Tlačidlo Spustiť vykoná podporovaný súbor priamo v tejto appke.</div>
+            <div class="notice small-gap" id="editorNotice">
+              Tu vieš kód meniť. Tlačidlo Spustiť vykoná podporovaný súbor priamo v tejto appke.
+            </div>
 
             <div class="cli-runner small-gap" id="cliRunner">
               <div class="cli-title">Živý web režim pre cli.m</div>
@@ -93,14 +91,17 @@
                     <option value="4">4 — Graf objektu na intervale</option>
                   </select>
                 </label>
+
                 <label class="cli-interval" id="cliStartWrap">
                   <span>t_start</span>
                   <input id="cliTStart" type="number" min="0" step="1" value="0" />
                 </label>
+
                 <label class="cli-interval" id="cliEndWrap">
                   <span>t_end</span>
                   <input id="cliTEnd" type="number" min="1" step="1" value="24" />
                 </label>
+
                 <button class="primary-btn cli-btn" id="btnRunCli" type="button">Vykonať voľbu</button>
               </div>
             </div>
@@ -120,7 +121,7 @@
       <section class="panel glass" id="panel-calc">
         <div class="section-head">
           <h2>Výpočty</h2>
-          <button class="primary-btn" id="btnRefreshCalc">Prepočítať</button>
+          <button class="primary-btn" id="btnRefreshCalc" type="button">Prepočítať</button>
         </div>
 
         <div class="formula-box slim">
@@ -141,7 +142,11 @@
           <div class="table-title">Body zo zadania</div>
           <table>
             <thead>
-              <tr><th>t [hod]</th><th>y(t)</th><th>x(t)</th></tr>
+              <tr>
+                <th>t [hod]</th>
+                <th>y(t)</th>
+                <th>x(t)</th>
+              </tr>
             </thead>
             <tbody id="pointsTable"></tbody>
           </table>
@@ -151,7 +156,10 @@
           <div class="table-title">Kontrola rovníc</div>
           <table>
             <thead>
-              <tr><th>Výraz</th><th>Hodnota</th></tr>
+              <tr>
+                <th>Výraz</th>
+                <th>Hodnota</th>
+              </tr>
             </thead>
             <tbody id="equationsTable"></tbody>
           </table>
@@ -161,7 +169,7 @@
       <section class="panel glass" id="panel-env">
         <div class="section-head">
           <h2>Graf prostredia</h2>
-          <button class="primary-btn" id="btnEnv">Obnoviť graf</button>
+          <button class="primary-btn" id="btnEnv" type="button">Obnoviť graf</button>
         </div>
         <div id="envChart" class="chart"></div>
       </section>
@@ -169,7 +177,7 @@
       <section class="panel glass" id="panel-obj">
         <div class="section-head">
           <h2>Graf objektu</h2>
-          <button class="primary-btn" id="btnObj">Obnoviť graf</button>
+          <button class="primary-btn" id="btnObj" type="button">Obnoviť graf</button>
         </div>
         <div id="objChart" class="chart"></div>
       </section>
@@ -177,33 +185,46 @@
       <section class="panel glass" id="panel-interval">
         <div class="section-head">
           <h2>Vlastný interval</h2>
-          <button class="primary-btn" id="btnInterval">Zobraziť</button>
+          <button class="primary-btn" id="btnInterval" type="button">Zobraziť</button>
         </div>
+
         <div class="interval-controls">
-          <label><span>t_start</span><input id="tStart" type="number" min="0" step="1" value="0" /></label>
-          <label><span>t_end</span><input id="tEnd" type="number" min="1" step="1" value="24" /></label>
+          <label>
+            <span>t_start</span>
+            <input id="tStart" type="number" min="0" step="1" value="0" />
+          </label>
+          <label>
+            <span>t_end</span>
+            <input id="tEnd" type="number" min="1" step="1" value="24" />
+          </label>
         </div>
+
         <div class="notice" id="intervalNotice">Zadaj celé hodiny.</div>
         <div id="intervalChart" class="chart small-gap"></div>
+
         <div class="table-wrap top-gap">
           <div class="table-title">Tabuľka pre zvolený interval</div>
           <table>
-            <thead><tr><th>t [hod]</th><th>x(t)</th></tr></thead>
+            <thead>
+              <tr>
+                <th>t [hod]</th>
+                <th>x(t)</th>
+              </tr>
+            </thead>
             <tbody id="intervalTable"></tbody>
           </table>
         </div>
       </section>
 
       <section class="panel glass" id="panel-files">
-        <div class="section-head"><h2>MATLAB súbory</h2></div>
+        <div class="section-head">
+          <h2>MATLAB súbory</h2>
+        </div>
         <div class="file-grid" id="filesGrid"></div>
       </section>
     </section>
   </main>
 
-  <script src="script.js"></script>
-    <script src="adr_matlab_cli_live/script.js"></script>
-</body>
-</html>
+  <script src="adr_matlab_cli_live/script.js"></script>
 </body>
 </html>

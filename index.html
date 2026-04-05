@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ADR IDE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="adr_matlab_cli_live/styles.css" />
-<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-<script src="adr_matlab_cli_live/script.js"></script>
-</head>
-<body>
-  <div class="bg-orb orb-1"></div>
-  <div class="bg-orb orb-2"></div>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <header class="hero wrap">
-    <div class="hero-copy">
-      <div class="eyebrow">MATLAB projekt</div>
-      <h1>ADR</h1>
-      <div class="hero-actions">
-        <button class="primary-btn" data-jump="ide">Editor</button>
-        <button class="secondary-btn" data-jump="calc">Výpočty</button>
-        <button class="secondary-btn" data-jump="env">Graf prostredia</button>
-        <button class="secondary-btn" data-jump="obj">Graf objektu</button>
-        <button class="secondary-btn" data-jump="interval">Vlastný interval</button>
-      </div>
-    </div>
+<title>ADR IDE</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="adr_matlab_cli_live/styles.css" />
+
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+
+<body>
+
+<div class="bg-orb orb-1"></div>
+<div class="bg-orb orb-2"></div>
+
+<header class="hero wrap">
+<div class="hero-copy">
+<div class="eyebrow">MATLAB projekt</div>
+<h1>ADR</h1>
+
+<div class="hero-actions">
+<button class="primary-btn" data-jump="ide">Editor</button>
+<button class="secondary-btn" data-jump="calc">Výpočty</button>
+<button class="secondary-btn" data-jump="env">Graf prostredia</button>
+<button class="secondary-btn" data-jump="obj">Graf objektu</button>
+<button class="secondary-btn" data-jump="interval">Vlastný interval</button>
+</div>
+</div>
 
     <div class="hero-card glass compact-stats">
       <div class="stat-box"><span>C</span><strong id="heroC">—</strong></div>
